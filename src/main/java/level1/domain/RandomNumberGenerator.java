@@ -14,8 +14,8 @@ public class RandomNumberGenerator implements NumberGenerator {
 
     @Override
     public List<Integer> generate() {
-        Set<Integer> set = new HashSet<>();
-        Random random = new Random();
+        final Set<Integer> set = new HashSet<>();
+        final Random random = new Random();
         while (set.size() != MAX_SIZE) {
             set.add(random.nextInt(MAX_NUMBER) + MIN_NUMBER);
         }
