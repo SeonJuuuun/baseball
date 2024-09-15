@@ -42,4 +42,8 @@ public class Player {
             throw new PlayerNumberDuplicateException("중복된 숫자가 있으면 안됩니다.");
         }
     }
+
+    public List<Integer> getPlayerNumber() {
+        return playerNumber;
+    }
 }

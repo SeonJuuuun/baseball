@@ -1,8 +1,8 @@
 package level1.view;
 
 import java.util.Scanner;
-import level1.exception.BlankInputException;
-import level1.exception.InvalidNumberException;
+import level1.exception.input.BlankInputException;
+import level1.exception.input.InvalidNumberException;
 
 public class Input {
 
