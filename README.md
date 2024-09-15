@@ -35,17 +35,22 @@
   - 컴퓨터의 숫자를 저장하는 클래스
   - 필드는 Integer List
   - 랜덤으로 숫자를 3개 뽑고 저장
-  - 예외처리를 안하는 대신 요구사항에 맞게 정확하게 뽑기.
 - Referee
   - Computer의 숫자와 Player의 숫자를 판단해 힌트를 계산하는 클래스
   - 3스트라이크 판별도 이 클래스가 해야 한다고 생각
 
 - BaseballGame
   - 모든 클래스들과 상호작용하여 총괄하는 클래스
-  - Computer의 숫자를 랜덤으로 만들고 플레어의 입력을 받으며 게임을 진행하는 클래스
+  - Computer의 숫자와 플레이어의 입력을 받으며 게임을 진행하는 클래스
 
 - Input
   - Player의 입력을 담당하는 클래스
 
 - Output
   - 모든 게임에 관련된 출력을 담당하는 클래스
+  
+- NumberGenerator
+  - 숫자 생성 인터페이스
+
+- RandomNumberGenerator
+  - NumberGenerator 구현체
