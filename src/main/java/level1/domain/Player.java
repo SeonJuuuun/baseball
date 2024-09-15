@@ -1,6 +1,9 @@
 package level1.domain;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import level1.exception.player.PlayerNumberDuplicateException;
 import level1.exception.player.PlayerNumberRangeException;
 import level1.exception.player.PlayerNumberSizeException;
 
@@ -15,6 +18,7 @@ public class Player {
     public Player(final List<Integer> playerNumber) {
         validatePlayerNumberSize(playerNumber);
         validatePlayerNumberRange(playerNumber);
+        validateDuplicateNumber(playerNumber);
         this.playerNumber = playerNumber;
     }
 
@@ -29,6 +33,13 @@ public class Player {
             if (number < MIN_PLAYER_NUMBER_RANGE || number > MAX_PLAYER_NUMBER_RANGE) {
                 throw new PlayerNumberRangeException(MIN_PLAYER_NUMBER_RANGE, MAX_PLAYER_NUMBER_RANGE);
             }
+        }
+    }
+
+    private void validateDuplicateNumber(final List<Integer> playerNumber) {
+        final Set<Integer> numberSet = new HashSet<>(playerNumber);
+        if (numberSet.size() != playerNumber.size()) {
+            throw new PlayerNumberDuplicateException("중복된 숫자가 있으면 안됩니다.");
         }
     }
 }
