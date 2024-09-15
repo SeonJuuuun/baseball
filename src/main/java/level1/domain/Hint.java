@@ -23,9 +23,6 @@ public class Hint {
         if (ballCount == ZERO_COUNT) {
             return strikeCount + "스트라이크";
         }
-        if (strikeCount == THREE_COUNT) {
-            return "정답입니다!";
-        }
         return strikeCount + "스트라이크 " + ballCount + "볼";
     }
 
