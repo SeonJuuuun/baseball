@@ -28,4 +28,8 @@ public class Hint {
         }
         return strikeCount + "스트라이크 " + ballCount + "볼";
     }
+
+    public boolean isThreeStrike() {
+        return strikeCount == THREE_COUNT;
+    }
 }

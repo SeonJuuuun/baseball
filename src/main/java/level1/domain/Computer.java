@@ -8,5 +8,10 @@ public class Computer {
 
     public Computer(final NumberGenerator numberGenerator) {
         this.computerNumber = numberGenerator.generate();
+        computerNumber.forEach(System.out::print);
+    }
+
+    public List<Integer> getComputerNumber() {
+        return computerNumber;
     }
 }
