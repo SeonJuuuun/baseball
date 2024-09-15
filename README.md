@@ -55,3 +55,6 @@
 
 - RandomNumberGenerator
   - NumberGenerator 구현체
+
+- Hint
+  - Referee 클래스가 판단한 결과를 저장한 후 힌트를 주는 클래스
