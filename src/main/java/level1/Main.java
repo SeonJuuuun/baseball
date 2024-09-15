@@ -5,7 +5,7 @@ import level1.domain.Referee;
 
 public class Main {
     public static void main(String[] args) {
-        BaseballGame baseballGame = new BaseballGame(new RandomNumberGenerator(), new Referee());
+        final BaseballGame baseballGame = new BaseballGame(new RandomNumberGenerator(), new Referee());
         baseballGame.start();
     }
 }
