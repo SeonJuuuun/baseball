@@ -32,29 +32,30 @@
   - 자리수가 3자리인지 판별하는 기능, 만약 아니면 예외처리
   - 각 자리의 숫자가 1 ~ 9 사이인지 판별하는 기능, 만약 아니면 예외처리
   - 각 자리 숫자가 동일한게 있는지 판별하는 기능, 만약 아니면 예외처리
-- Computer
+  
+- ### Computer
   - 컴퓨터의 숫자를 저장하는 클래스
   - 필드는 Integer List
   - 랜덤으로 숫자를 3개 뽑고 저장
-- Referee
-  - Computer의 숫자와 Player의 숫자를 판단해 힌트를 계산하는 클래스
-  - 3스트라이크 판별도 이 클래스가 해야 한다고 생각
+  
+- ### Referee
+  - 오직 Computer의 숫자와 Player의 숫자를 판단해 스트라이크, 볼 개수 계산하는 클래스
 
-- BaseballGame
+- ### BaseballGame
   - 모든 클래스들과 상호작용하여 총괄하는 클래스
   - Computer의 숫자와 플레이어의 입력을 받으며 게임을 진행하는 클래스
 
-- Input
+- ### Input
   - Player의 입력을 담당하는 클래스
 
-- Output
+- ### Output
   - 모든 게임에 관련된 출력을 담당하는 클래스
   
-- NumberGenerator
+- ### NumberGenerator
   - 숫자 생성 인터페이스
 
-- RandomNumberGenerator
+- ### RandomNumberGenerator
   - NumberGenerator 구현체
 
-- Hint
+- ### Hint
   - Referee 클래스가 판단한 결과를 저장한 후 힌트를 주는 클래스
