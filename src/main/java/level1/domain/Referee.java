@@ -10,6 +10,7 @@ public class Referee {
 
         int strikeCount = 0;
         int ballCount = 0;
+        boolean ended = false;
 
         for (int i = 0; i < computerNumbers.size(); i++) {
             if (computerNumbers.get(i).equals(playerNumbers.get(i))) {
@@ -18,7 +19,9 @@ public class Referee {
                 ballCount++;
             }
         }
-
-        return new Hint(strikeCount, ballCount);
+        if (strikeCount == 3) {
+            ended = true;
+        }
+        return new Hint(strikeCount, ballCount, ended);
     }
 }
