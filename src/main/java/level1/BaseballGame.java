@@ -31,10 +31,8 @@ public class BaseballGame {
         while (true) {
             final Player player = repeat(this::inputPlayerNumber);
             final Hint hint = referee.judge(computer, player);
-            final String result = hint.result();
-            Output.printResult(result);
-            if (hint.isThreeStrike()) {
-                Output.printAnswerMessage();
+            Output.printResult(hint);
+            if (hint.isEnded()) {
                 break;
             }
             Output.printSpace();
