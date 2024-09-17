@@ -6,6 +6,7 @@ import level3.exception.command.InvalidCommandException;
 public enum Screen {
 
     START("1"),
+    RECORD("2"),
     EXIT("3");
 
     private final String command;

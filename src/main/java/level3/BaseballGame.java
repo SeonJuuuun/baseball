@@ -4,6 +4,7 @@ import static level2.util.Repeat.repeat;
 
 import java.util.Arrays;
 import level3.domain.Computer;
+import level3.domain.GameStats;
 import level3.domain.Hint;
 import level3.domain.NumberGenerator;
 import level3.domain.Player;
@@ -15,13 +16,17 @@ public class BaseballGame {
 
     private final NumberGenerator numberGenerator;
     private final Referee referee;
+    private final GameStats gameStats;
 
-    public BaseballGame(final NumberGenerator numberGenerator, final Referee referee) {
+    public BaseballGame(final NumberGenerator numberGenerator, final Referee referee, final GameStats gameStats) {
         this.numberGenerator = numberGenerator;
         this.referee = referee;
+        this.gameStats = gameStats;
     }
 
     public void start() {
+        gameStats.incrementGameCount();
+        gameStats.resetTryCount();
         Output.printStartMessage();
         final Computer computer = settingComputerNumber();
         play(computer);
@@ -30,9 +35,11 @@ public class BaseballGame {
     private void play(final Computer computer) {
         while (true) {
             final Player player = repeat(this::inputPlayerNumber);
+            gameStats.incrementTryCount();
             final Hint hint = referee.judge(computer, player);
             Output.printResult(hint);
             if (hint.isEnded()) {
+                gameStats.recordAttemptsStore();
                 break;
             }
             Output.printSpace();

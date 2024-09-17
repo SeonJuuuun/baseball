@@ -1,5 +1,6 @@
 package level3.view;
 
+import java.util.Map;
 import level3.domain.Hint;
 
 public class Output {
@@ -45,6 +46,13 @@ public class Output {
         }
 
         System.out.println(result.toString().trim());
+    }
+
+    public static void printGameStatus(Map<Integer, Integer> attemptCounts) {
+        System.out.println("< 게임 기록 보기 >");
+        attemptCounts.forEach((gameNumber, attemptCount) ->
+                System.out.println(gameNumber + "번째 게임 : 시도 횟수 - " + attemptCount));
+        printSpace();
     }
 
 
