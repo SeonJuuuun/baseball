@@ -4,8 +4,12 @@ import level2.domain.Hint;
 
 public class Output {
 
-    public static void printSelectMessage() {
+    public static void printInstructionsMessage() {
         System.out.println("환영합니다! 원하시는 번호를 입력해주세요");
+    }
+
+    public static void printLoadView() {
+        System.out.println("1. 게임 시작하기 2. 게임 기록 보기 3. 종료하기");
     }
 
     public static void printStartMessage() {
@@ -22,7 +26,8 @@ public class Output {
         final boolean ended = hint.isEnded();
 
         if (ended) {
-            System.out.println("정답입니다!");
+            System.out.println("정답입니다! 다시 안내 문구를 보고 메뉴를 선택해 주세요!");
+            printSpace();
             return;
         }
 

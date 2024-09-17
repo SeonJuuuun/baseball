@@ -8,6 +8,12 @@ public class Input {
 
     private static final Scanner scanner = new Scanner(System.in);
 
+    public static String readSelectCommand() {
+        final String command = scanner.next();
+        validateInputs(command);
+        return command;
+    }
+
     public static String readPlayerNumber() {
         final String playerNumber = scanner.next();
         validateInputs(playerNumber);
