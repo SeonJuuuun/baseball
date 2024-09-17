@@ -81,5 +81,8 @@
   - command와 title이 존재함
 
 - ### GameManager
-  - BaseBallGame 상위의 총괄 클래스
+  - BaseballGame 상위의 총괄 클래스
   - 입력 커맨드에 따라 컨트롤 하는 클래스
+
+- ### GameStats
+  - 숫자 야구 게임의 게임 횟수와 시도 횟수를 저장하는 클래스
