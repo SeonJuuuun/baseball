@@ -1,13 +1,13 @@
 package level2;
 
+import static level2.util.Repeat.repeat;
+
 import java.util.Arrays;
-import java.util.function.Supplier;
 import level2.domain.Computer;
 import level2.domain.Hint;
 import level2.domain.NumberGenerator;
 import level2.domain.Player;
 import level2.domain.Referee;
-import level2.exception.BaseballException;
 import level2.view.Input;
 import level2.view.Output;
 
@@ -49,15 +49,5 @@ public class BaseballGame {
         return new Player(Arrays.stream(playerNumber.split(""))
                 .map(Integer::parseInt)
                 .toList());
-    }
-
-    private <T> T repeat(Supplier<T> inputReader) {
-        try {
-            return inputReader.get();
-        } catch (BaseballException e) {
-            System.out.println(e.getMessage());
-            Output.printSpace();
-            return repeat(inputReader);
-        }
     }
 }
