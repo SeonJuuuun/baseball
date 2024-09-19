@@ -10,7 +10,7 @@ public class Output {
     }
 
     public static void printLoadView() {
-        System.out.println("1. 게임 시작하기 2. 게임 기록 보기 3. 종료하기");
+        System.out.println("0. 자리수 설정 1. 게임 시작하기  2. 게임 기록 보기  3. 종료하기");
     }
 
     public static void printStartMessage() {
@@ -52,6 +52,16 @@ public class Output {
         System.out.println("< 게임 기록 보기 >");
         attemptCounts.forEach((gameNumber, attemptCount) ->
                 System.out.println(gameNumber + "번째 게임 : 시도 횟수 - " + attemptCount));
+        printSpace();
+    }
+
+    public static void printRequestDigitSize() {
+        printSpace();
+        System.out.println("설정하고자 하는 자리수를 입력하세요.");
+    }
+
+    public static void printDifficulty(int digitSize) {
+        System.out.println(digitSize + "자리수 난이도로 설정되었습니다.");
         printSpace();
     }
 

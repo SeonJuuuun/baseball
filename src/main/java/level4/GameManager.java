@@ -1,22 +1,20 @@
 package level4;
 
-import static level3.util.Repeat.repeat;
+import static level4.util.Repeat.repeat;
 
-import level4.domain.GameStats;
-import level4.domain.RandomNumberGenerator;
-import level4.domain.Referee;
+import level4.domain.GameConfig;
 import level4.domain.Screen;
 import level4.view.Input;
 import level4.view.Output;
 
 public class GameManager {
 
-    private final BaseballGame baseballGame;
-    private final GameStats gameStats;
+    private final GameConfig gameConfig;
+    private BaseballGame baseballGame;
 
     public GameManager() {
-        this.gameStats = new GameStats();
-        this.baseballGame = new BaseballGame(new RandomNumberGenerator(), new Referee(), gameStats);
+        this.gameConfig = new GameConfig();
+        this.baseballGame = gameConfig.createBaseballGame();
     }
 
     public void run() {
@@ -35,12 +33,20 @@ public class GameManager {
     }
 
     private boolean selectCommand(final Screen command) {
+        if (command.equals(Screen.SETTING)) {
+            Output.printRequestDigitSize();
+            gameConfig.configureDigitSize();
+            Output.printDifficulty(gameConfig.getDigitSize());
+            this.baseballGame = gameConfig.createBaseballGame();
+            baseballGame.start();
+            return true;
+        }
         if (command.equals(Screen.START)) {
             baseballGame.start();
             return true;
         }
         if (command.equals(Screen.RECORD)) {
-            Output.printGameStatus(gameStats.getAttemptsStore());
+            Output.printGameStatus(gameConfig.getGameStats().getAttemptsStore());
             return true;
         }
         return !command.equals(Screen.EXIT);

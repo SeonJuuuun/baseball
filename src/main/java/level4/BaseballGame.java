@@ -1,6 +1,6 @@
 package level4;
 
-import static level2.util.Repeat.repeat;
+import static level4.util.Repeat.repeat;
 
 import java.util.Arrays;
 import level4.domain.Computer;
@@ -17,11 +17,16 @@ public class BaseballGame {
     private final NumberGenerator numberGenerator;
     private final Referee referee;
     private final GameStats gameStats;
+    private final int digitSize;
 
-    public BaseballGame(final NumberGenerator numberGenerator, final Referee referee, final GameStats gameStats) {
+    public BaseballGame(final NumberGenerator numberGenerator,
+                        final Referee referee,
+                        final GameStats gameStats,
+                        final int digitSize) {
         this.numberGenerator = numberGenerator;
         this.referee = referee;
         this.gameStats = gameStats;
+        this.digitSize = digitSize;
     }
 
     public void start() {

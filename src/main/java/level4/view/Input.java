@@ -20,6 +20,12 @@ public class Input {
         return playerNumber;
     }
 
+    public static String readDigitSize() {
+        final String digitSize = scanner.next();
+        validateInputs(digitSize);
+        return digitSize;
+    }
+
     private static void validateInputs(final String inputs) {
         validateBlank(inputs);
         validateInteger(inputs);
