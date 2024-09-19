@@ -9,22 +9,23 @@ import level4.exception.player.PlayerNumberSizeException;
 
 public class Player {
 
-    private static final int MAX_PLAYER_NUMBER_SIZE = 3;
     private static final int MAX_PLAYER_NUMBER_RANGE = 9;
     private static final int MIN_PLAYER_NUMBER_RANGE = 1;
 
     private final List<Integer> playerNumber;
+    private final int digitSize;
 
-    public Player(final List<Integer> playerNumber) {
-        validatePlayerNumberSize(playerNumber);
+    public Player(final List<Integer> playerNumber, final int digitSize) {
         validatePlayerNumberRange(playerNumber);
         validateDuplicateNumber(playerNumber);
         this.playerNumber = playerNumber;
+        this.digitSize = digitSize;
+        validatePlayerNumberSize(playerNumber);
     }
 
     private void validatePlayerNumberSize(final List<Integer> playerNumber) {
-        if (playerNumber.size() != MAX_PLAYER_NUMBER_SIZE) {
-            throw new PlayerNumberSizeException(playerNumber.size());
+        if (playerNumber.size() != digitSize) {
+            throw new PlayerNumberSizeException();
         }
     }
 

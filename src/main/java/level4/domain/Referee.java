@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Referee {
 
-    public Hint judge(final Computer computer, final Player player) {
+    public Hint judge(final Computer computer, final Player player, final int digitSize) {
         final List<Integer> computerNumbers = computer.getComputerNumber();
         final List<Integer> playerNumbers = player.getPlayerNumber();
 
@@ -19,7 +19,7 @@ public class Referee {
                 ballCount++;
             }
         }
-        if (strikeCount == 3) {
+        if (strikeCount == digitSize) {
             ended = true;
         }
         return new Hint(strikeCount, ballCount, ended);

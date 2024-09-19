@@ -9,6 +9,8 @@ import level4.view.Input;
 public class GameConfig {
 
     private static final int DEFAULT_DIGIT_SIZE = 3;
+    private static final int MAX_DIGIT_SIZE = 5;
+    private static final int MIN_DIGIT_SIZE = 3;
 
     private int digitSize;
     private final GameStats gameStats;
@@ -37,7 +39,7 @@ public class GameConfig {
     }
 
     private void validateDigitSize(final int digitSize) {
-        if (digitSize < 3 || digitSize > 5) {
+        if (digitSize < MIN_DIGIT_SIZE || digitSize > MAX_DIGIT_SIZE) {
             throw new InvalidDigitSizeException("자리수는 3, 4, 5 중 하나여야 합니다! 다시 입력해 주세요.");
         }
     }

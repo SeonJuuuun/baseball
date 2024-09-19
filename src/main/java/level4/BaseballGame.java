@@ -41,7 +41,7 @@ public class BaseballGame {
         while (true) {
             final Player player = repeat(this::inputPlayerNumber);
             gameStats.incrementTryCount();
-            final Hint hint = referee.judge(computer, player);
+            final Hint hint = referee.judge(computer, player, digitSize);
             Output.printResult(hint);
             if (hint.isEnded()) {
                 gameStats.recordAttemptsStore();
@@ -60,6 +60,6 @@ public class BaseballGame {
         final String playerNumber = Input.readPlayerNumber();
         return new Player(Arrays.stream(playerNumber.split(""))
                 .map(Integer::parseInt)
-                .toList());
+                .toList(), digitSize);
     }
 }
