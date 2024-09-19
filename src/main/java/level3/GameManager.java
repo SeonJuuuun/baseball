@@ -1,6 +1,6 @@
 package level3;
 
-import static level2.util.Repeat.repeat;
+import static level3.util.Repeat.repeat;
 
 import level3.domain.GameStats;
 import level3.domain.RandomNumberGenerator;
